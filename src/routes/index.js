@@ -101,6 +101,10 @@ import ForgetPwd1 from "../pages/AuthenticationInner/ForgetPassword";
 import NouveauProspect from "../pages/GestionProspect/NouveauProspect";
 import SuiviProspect from "../pages/GestionProspect/SuiviProspect";
 import Facturation from "../pages/GestionProspect/Facturation";
+import GestionClient from "../pages/GestionClient/GestionClient";
+import GestionAffaires from "../pages/GestionAffaires/GestionAffaires";
+import GestionAvocat from "../pages/GestionAvocat/GestionAvocat";
+
 
 
 
@@ -110,6 +114,15 @@ const authProtectedRoutes = [
 	{ path: "/ajouterprospect", component: <NouveauProspect /> },
 	{ path: "/suiviprospect", component: <SuiviProspect /> },
 	{ path: "/facturation", component: <Facturation /> },
+
+	//Gestion Client
+	{ path: "/client", component: <GestionClient /> },
+
+	//Gestion affaires
+	{ path:"/affaires", component: <GestionAffaires />},
+
+	//Gestion Avocat
+	{path:"/avocats" , component : <GestionAvocat />},
 
 
 

@@ -35,9 +35,9 @@ class SidebarContent extends Component {
   UNSAFE_componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
 
-        if (this.props.type !== prevProps.type) {
-            this.initMenu();
-        }
+      if (this.props.type !== prevProps.type) {
+        this.initMenu();
+      }
 
     }
     if (this.props.router.location.pathname !== prevProps.router.location.pathname) {
@@ -109,7 +109,7 @@ class SidebarContent extends Component {
               </Link>
             </li>
 
-            <li>
+            {/* <li>
               <Link to="/#" className="has-arrow waves-effect">
                 <i className="ri-bar-chart-line"></i>
                 <span className="ms-1">{this.props.t('Gestion Prospect')}</span>
@@ -119,6 +119,35 @@ class SidebarContent extends Component {
                 <li><Link to="/suiviprospect">{this.props.t("Suivi Prospect")}</Link></li>
                 <li><Link to="/facturation">{this.props.t("Facturation")}</Link></li>
               </ul>
+            </li> */}
+
+            <li>
+              <Link to="/ajouterprospect" className="waves-effect">
+                <i className="  ri-chat-new-fill"></i>
+                <span className="ms-1">{this.props.t('Gestion Prospect')}</span>
+              </Link>
+            </li>
+
+
+            <li>
+              <Link to="/client" className="waves-effect">
+                <i className=" ri-file-user-fill"></i>
+                <span className="ms-1">{this.props.t('Gestion Client')}</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/affaires" className="waves-effect">
+                <i className=" ri-folder-open-fill"></i>
+                <span className="ms-1">{this.props.t('Gestion Affaires')}</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/avocats" className="waves-effect">
+                <i className=" ri-briefcase-fill"></i>
+                <span className="ms-1">{this.props.t('Gestion Avocats')}</span>
+              </Link>
             </li>
 
           </ul>

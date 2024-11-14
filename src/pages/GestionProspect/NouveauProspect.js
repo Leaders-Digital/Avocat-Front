@@ -65,7 +65,6 @@ const NouveauProspect = () => {
           Valider
         </Checkbox>
 
-        <EyeOutlined />
       ),
     },
 
@@ -127,7 +126,7 @@ const NouveauProspect = () => {
             <Divider orientation="right">
               <Button
                 type="primary"
-                style={{ backgroundColor: '#DCC151', borderColor: '#DCC151' }}
+                // style={{ backgroundColor: '#DCC151', borderColor: '#DCC151' }}
                 onClick={showModal}
               >
                 Ajouter Prospect

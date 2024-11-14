@@ -1,5 +1,5 @@
 import React from 'react'
-import { Divider, Form, Input, Modal } from "antd";
+import { Col, DatePicker, Divider, Form, Input, Modal, Select,Row } from "antd";
 
 const AddProspectModal = ({ visible, onClose }) => {
   return (
@@ -11,28 +11,53 @@ const AddProspectModal = ({ visible, onClose }) => {
     >
       <Divider orientation=''></Divider>
 
-      <Form.Item  name="nom" rules={[{ required: true }]}>
-        <Input placeholder='Nom'/>
+      <Row gutter={16}>
+    {/* Left Column */}
+    <Col span={12}>
+      <Form.Item name="nom" rules={[{ required: true }]}>
+        <Input placeholder="Nom" />
       </Form.Item>
 
-      <Form.Item  name="prenom" rules={[{ required: true }]} >
-        <Input placeholder='Prenom'/>
+      <Form.Item name="prenom" rules={[{ required: true }]}>
+        <Input placeholder="Prénom" />
       </Form.Item>
 
-      <Form.Item  name="tel" rules={[{ required: true }]}>
-        <Input placeholder='Téléphone'/>
+      <Form.Item name="telephone" rules={[{ required: true }]}>
+        <Input placeholder="Téléphone" />
       </Form.Item>
 
-      <Form.Item  name="email" rules={[{ required: true }]}>
-        <Input placeholder='Email'/>
+      <Form.Item name="email" rules={[{ required: true, type: 'email', message: 'Entrez un email valide.' }]}>
+        <Input placeholder="Email" />
+      </Form.Item>
+    </Col>
+
+    {/* Right Column */}
+    <Col span={12}>
+      <Form.Item name="adresse" rules={[{ required: true }]}>
+        <Input placeholder="Adresse" />
       </Form.Item>
 
-     
-
-      <Form.Item  name="adresse" rules={[{ required: true }]}>
-        <Input placeholder='Adresse'/>
+      <Form.Item name="entreprise">
+        <Input placeholder="Entreprise" />
       </Form.Item>
 
+      <Form.Item name="statut" rules={[{ required: true }]}>
+        <Select placeholder="Statut">
+          <Select.Option value="Nouveau">Nouveau</Select.Option>
+          <Select.Option value="Contacté">Contacté</Select.Option>
+          <Select.Option value="En attente">En attente</Select.Option>
+        </Select>
+      </Form.Item>
+
+      {/* <Form.Item name="dateCreation">
+        <DatePicker placeholder="Date de création" style={{ width: '100%' }} />
+      </Form.Item> */}
+
+      <Form.Item name="notes">
+        <Input.TextArea placeholder="Notes" />
+      </Form.Item>
+    </Col>
+  </Row>
 
       
     </Form>
